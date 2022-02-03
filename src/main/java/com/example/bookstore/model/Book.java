@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Book {
-	// attributes
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,11 +18,11 @@ public class Book {
 	
 	public Book() {
 		super();
-		this.title = "title";
-		this.author = "author";
-		this.year = 2022;
-		this.isbn = "isbn";
-		this.price = 123;
+		this.title = "";
+		this.author = "";
+		this.year = 0;
+		this.isbn = "";
+		this.price = 0;
 	}
 	
 	public Book(String title, String author, int year, String isbn, double price) {
@@ -44,6 +43,13 @@ public class Book {
 		this.price = 30;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}
