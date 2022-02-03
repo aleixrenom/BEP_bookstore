@@ -64,4 +64,9 @@ public class BookController {
 		return "friendlist";
 	}
 
+    @RequestMapping(value= {"/booklist"})
+    public String bookList(Model model) {	
+        model.addAttribute("books", repository.findAll());
+        return "booklist";
+    }
 }
