@@ -3,6 +3,7 @@ package com.example.bookstore.web;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,10 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.bookstore.model.Book;
+import com.example.bookstore.model.BookRepository;
 import com.example.bookstore.model.Friend;
 
 @Controller
 public class BookController {
+	@Autowired
+	private BookRepository repository;
+	
 	@RequestMapping("/")
 	public String index() {
 		return "index";

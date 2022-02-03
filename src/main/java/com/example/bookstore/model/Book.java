@@ -1,20 +1,47 @@
 package com.example.bookstore.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
 	// attributes
-	private String title;
-	private String author;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	private String title, author, isbn;
 	private int year;
-	private String isbn;
 	private double price;
 	
-	public Book(String title, String author) {
+	public Book() {
+		super();
+		this.title = "title";
+		this.author = "author";
+		this.year = 2022;
+		this.isbn = "isbn";
+		this.price = 123;
+	}
+	
+	public Book(String title, String author, int year, String isbn, double price) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.year = year;
 		this.isbn = isbn;
 		this.price = price;
+	}
+	
+	public Book(String title, String author) {
+		super();
+		this.title = title;
+		this.author = author;
+		this.year = 2022;
+		this.isbn = "0123456789";
+		this.price = 30;
 	}
 	
 	public String getTitle() {
