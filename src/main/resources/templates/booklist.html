@@ -6,6 +6,17 @@
 </head>
 <body>
 	<h1>Books</h1>
+	
+	<div>
+		<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+	</div>
+	
+	<div>
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="Sign Out"/>
+		</form>
+	</div>
+	
     <table>
 		<tr>
 		    <th>Title</th>
